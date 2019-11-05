@@ -1,6 +1,7 @@
 package com.steven.deviceinfo
 
 import android.content.res.Configuration
+import android.content.res.Configuration.*
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,13 +9,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.text.DecimalFormat
 import kotlin.math.pow
 import kotlin.math.sqrt
-import android.content.res.Configuration.SCREENLAYOUT_SIZE_XLARGE
-import android.content.res.Configuration.SCREENLAYOUT_SIZE_SMALL
-import android.content.res.Configuration.SCREENLAYOUT_SIZE_NORMAL
-import android.content.res.Configuration.SCREENLAYOUT_SIZE_LARGE
-import android.content.res.Configuration.SCREENLAYOUT_SIZE_MASK
-
-
 
 
 class MainActivity : AppCompatActivity() {
@@ -76,6 +70,7 @@ class MainActivity : AppCompatActivity() {
             SCREENLAYOUT_SIZE_SMALL -> category = "SMALL"
             SCREENLAYOUT_SIZE_XLARGE -> category = "XL"
             SCREENLAYOUT_SIZE_MASK -> category = "MASK"
+            SCREENLAYOUT_SIZE_UNDEFINED -> category = "UNDEF/TOO LARGE"
         }
 
         tv_size_category.text = "SIZE CATEGORY: (" + screenSize + ") " + category
